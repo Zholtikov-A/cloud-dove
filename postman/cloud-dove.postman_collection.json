@@ -1,0 +1,879 @@
+{
+	"info": {
+		"_postman_id": "52c42e80-b06b-423a-ab86-663f31f21a3f",
+		"name": "cloud-dove",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29756715"
+	},
+	"item": [
+		{
+			"name": "Create user Id 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"your.mail@gmail.com\",\n  \"username\": \"userTheFirst\",\n  \"password\": \"pass\",\n  \"name\": \"First User\"\n  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/registration",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user Id 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"another.mail@gmail.com\",\n  \"username\": \"userTheSecond\",\n  \"password\": \"password\",\n  \"name\": \"Second User\"\n  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/registration",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload picture to dir",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "userTheFirst",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "Puma-developer",
+							"type": "file",
+							"src": "postman-cloud:///1ef9f3df-a96c-4120-b6c4-3a3b8c9d7756"
+						},
+						{
+							"key": "file",
+							"description": "White cat and coffee",
+							"type": "file",
+							"src": "postman-cloud:///1ef9f402-dabe-4ca0-8f6f-07aa358de4bd"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/uploads/images",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"uploads",
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload pictures to cloud 2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "userTheFirst",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "Puma-developer",
+							"type": "file",
+							"src": "postman-cloud:///1ef9f3df-a96c-4120-b6c4-3a3b8c9d7756"
+						},
+						{
+							"key": "file",
+							"description": "Cute cats",
+							"type": "file",
+							"src": "postman-cloud:///1ef9f623-364c-4c30-8fcb-3aee2a6d1bba"
+						},
+						{
+							"key": "file",
+							"description": "Gif not allowed",
+							"type": "file",
+							"src": "postman-cloud:///1ef9f612-809a-46e0-9dfb-fb156a731b50",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"description": "Too big",
+							"type": "file",
+							"src": "/Users/puma.hope/Personal/Photo/Zucker.JPG",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/upload",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload pictures to cloud 3",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "userTheSecond",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1efa0ef5-177a-4c40-90b5-10f56b6da834"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1efa0ef4-fa66-4eb0-accc-9d6f2cf09169"
+						},
+						{
+							"key": "file",
+							"description": "Gif not allowed",
+							"type": "file",
+							"src": "postman-cloud:///1ef9f612-809a-46e0-9dfb-fb156a731b50",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"description": "Too big",
+							"type": "file",
+							"src": "/Users/puma.hope/Personal/Photo/Zucker.JPG",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/upload",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get picture from cloud",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "userTheFirst",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "Puma-developer",
+							"type": "file",
+							"src": "postman-cloud:///1ef9f3df-a96c-4120-b6c4-3a3b8c9d7756"
+						},
+						{
+							"key": "file",
+							"description": "White cat and coffee",
+							"type": "file",
+							"src": "postman-cloud:///1ef9f402-dabe-4ca0-8f6f-07aa358de4bd"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/download/CuteCats.png",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"download",
+						"CuteCats.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of pics Owner",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "userTheFirst",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"userTheFirst\",\n  \"name\": \"First User\",\n  \"email\": \"puma.hopefull@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/list?dateFrom=2024-11-09 12:00:00&sizeFrom=10&picIdFrom=1&picIdTo=10&sortState=SIZE_SORT_DESC",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"list"
+					],
+					"query": [
+						{
+							"key": "dateFrom",
+							"value": "2024-11-09 12:00:00"
+						},
+						{
+							"key": "dateTo",
+							"value": "2024-11-09 14:00:00",
+							"disabled": true
+						},
+						{
+							"key": "sizeFrom",
+							"value": "10"
+						},
+						{
+							"key": "sizeTo",
+							"value": "10000",
+							"disabled": true
+						},
+						{
+							"key": "picIdFrom",
+							"value": "1"
+						},
+						{
+							"key": "picIdTo",
+							"value": "10"
+						},
+						{
+							"key": "sortState",
+							"value": "SIZE_SORT_DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of pics Moderator",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "moderator",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "moderator",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"userTheFirst\",\n  \"name\": \"First User\",\n  \"email\": \"puma.hopefull@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/moderators/list",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"moderators",
+						"list"
+					],
+					"query": [
+						{
+							"key": "dateFrom",
+							"value": "2024-11-09 12:00:00",
+							"disabled": true
+						},
+						{
+							"key": "dateTo",
+							"value": "2024-11-09 14:00:00",
+							"disabled": true
+						},
+						{
+							"key": "sizeFrom",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "sizeTo",
+							"value": "10000",
+							"disabled": true
+						},
+						{
+							"key": "picIdFrom",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "picIdTo",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "sortState",
+							"value": "SIZE_SORT_DESC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of pics User 3 ok",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "userTheSecond",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"userTheFirst\",\n  \"name\": \"First User\",\n  \"email\": \"puma.hopefull@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/list?dateFrom=2024-11-09 12:00:00&sizeFrom=10&picIdFrom=1&picIdTo=10&sortState=SIZE_SORT_DESC",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"list"
+					],
+					"query": [
+						{
+							"key": "dateFrom",
+							"value": "2024-11-09 12:00:00"
+						},
+						{
+							"key": "dateTo",
+							"value": "2024-11-09 14:00:00",
+							"disabled": true
+						},
+						{
+							"key": "sizeFrom",
+							"value": "10"
+						},
+						{
+							"key": "sizeTo",
+							"value": "10000",
+							"disabled": true
+						},
+						{
+							"key": "picIdFrom",
+							"value": "1"
+						},
+						{
+							"key": "picIdTo",
+							"value": "10"
+						},
+						{
+							"key": "sortState",
+							"value": "SIZE_SORT_DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block User Id 3",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "moderator",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "moderator",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"userTheFirst\",\n  \"name\": \"First User\",\n  \"email\": \"puma.hopefull@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/moderators/block/userTheSecond/BLOCKED",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"moderators",
+						"block",
+						"userTheSecond",
+						"BLOCKED"
+					],
+					"query": [
+						{
+							"key": "dateFrom",
+							"value": "2024-11-09 12:00:00",
+							"disabled": true
+						},
+						{
+							"key": "dateTo",
+							"value": "2024-11-09 14:00:00",
+							"disabled": true
+						},
+						{
+							"key": "sizeFrom",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "sizeTo",
+							"value": "10000",
+							"disabled": true
+						},
+						{
+							"key": "picIdFrom",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "picIdTo",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "sortState",
+							"value": "SIZE_SORT_DESC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of pics User 3 Blocked",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "userTheSecond",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"userTheFirst\",\n  \"name\": \"First User\",\n  \"email\": \"puma.hopefull@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/list?dateFrom=2024-11-09 12:00:00&sizeFrom=10&picIdFrom=1&picIdTo=10&sortState=SIZE_SORT_DESC",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"list"
+					],
+					"query": [
+						{
+							"key": "dateFrom",
+							"value": "2024-11-09 12:00:00"
+						},
+						{
+							"key": "dateTo",
+							"value": "2024-11-09 14:00:00",
+							"disabled": true
+						},
+						{
+							"key": "sizeFrom",
+							"value": "10"
+						},
+						{
+							"key": "sizeTo",
+							"value": "10000",
+							"disabled": true
+						},
+						{
+							"key": "picIdFrom",
+							"value": "1"
+						},
+						{
+							"key": "picIdTo",
+							"value": "10"
+						},
+						{
+							"key": "sortState",
+							"value": "SIZE_SORT_DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block User Id 3 Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "moderator",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "moderator",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"userTheFirst\",\n  \"name\": \"First User\",\n  \"email\": \"puma.hopefull@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/moderators/block/userTheSecond/ACTIVE",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"moderators",
+						"block",
+						"userTheSecond",
+						"ACTIVE"
+					],
+					"query": [
+						{
+							"key": "dateFrom",
+							"value": "2024-11-09 12:00:00",
+							"disabled": true
+						},
+						{
+							"key": "dateTo",
+							"value": "2024-11-09 14:00:00",
+							"disabled": true
+						},
+						{
+							"key": "sizeFrom",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "sizeTo",
+							"value": "10000",
+							"disabled": true
+						},
+						{
+							"key": "picIdFrom",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "picIdTo",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "sortState",
+							"value": "SIZE_SORT_DESC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of pics User 3 ok Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "userTheSecond",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"userTheFirst\",\n  \"name\": \"First User\",\n  \"email\": \"puma.hopefull@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/list?dateFrom=2024-11-09 12:00:00&sizeFrom=10&picIdFrom=1&picIdTo=10&sortState=SIZE_SORT_DESC",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"list"
+					],
+					"query": [
+						{
+							"key": "dateFrom",
+							"value": "2024-11-09 12:00:00"
+						},
+						{
+							"key": "dateTo",
+							"value": "2024-11-09 14:00:00",
+							"disabled": true
+						},
+						{
+							"key": "sizeFrom",
+							"value": "10"
+						},
+						{
+							"key": "sizeTo",
+							"value": "10000",
+							"disabled": true
+						},
+						{
+							"key": "picIdFrom",
+							"value": "1"
+						},
+						{
+							"key": "picIdTo",
+							"value": "10"
+						},
+						{
+							"key": "sortState",
+							"value": "SIZE_SORT_DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:8081",
+			"type": "string"
+		}
+	]
+}
